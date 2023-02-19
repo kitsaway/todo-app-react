@@ -127,6 +127,13 @@ input[type="text"]::placeholder {
 .todo-count {
   color: #575757;
 }
+
+.emptyList {
+  margin: 0.7rem auto;
+  text-align: center;
+  color: #5757576a;
+}
+
 .filters {
   display: flex;
 }

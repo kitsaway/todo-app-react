@@ -4,7 +4,6 @@ import Task from "./Task";
 
 const TaskList = () => {
   const { tasks } = useContext(TodoContext);
-  console.log('tasks', tasks)
   let todos = tasks.map((task) => {
     return (
       <Task
@@ -16,7 +15,11 @@ const TaskList = () => {
     );
   });
 
-  return <div className="tasks-container">{todos}</div>;
+  return (
+    <div className="tasks-container">
+      {todos.length > 0 ? todos : <p className="emptyList">No todos yet</p>}
+    </div>
+  );
 };
 
 export default TaskList;
