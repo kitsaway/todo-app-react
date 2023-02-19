@@ -62,13 +62,14 @@ export function TodoProvider({ children }) {
   };
 
   const handleCheckAll = () => {
-    // has bug
     const tasksList = [...tasks];
     tasksList.map(async (task) => {
       let status = task.status;
-      await API.checkAll(status).then((res) => console.log("res", res));
+      await API.checkAll(status).then((res) => {
+        getTasks();
+        getCount();
+      });
     });
-    getCount();
   };
 
   const handleClear = async () => {
